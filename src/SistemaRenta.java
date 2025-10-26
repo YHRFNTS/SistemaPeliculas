@@ -28,4 +28,34 @@ public class SistemaRenta {
         }
         System.out.println("Película no encontrada");
     }
+
+    //Renta una película por código
+    public void rentarPelicula(String codigo){
+        for (Pelicula p : catalogo){
+            if (p.getCodigo().equals(codigo)){
+                if (p.getCantidadDisponible() > 0){
+                    p.setCantidadDisponible(p.getCantidadDisponible() - 1); //Reduce disponibilidad
+                    p.incrementarRentas(); //Incrementa contador
+                    //Verifica si ya está en la lista de rentadas
+                    boolean yaRentada = false;
+                    for (Pelicula r : rentadas){
+                        if (r.getCodigo().equals(codigo)){
+                            yaRentada = true;
+                            break;
+                        }
+                    }
+                    if (!yaRentada){
+                        rentadas.add(p); //Agrega a la lista de Rentadas
+                    }
+                    System.out.println("Película rentada: " + p.getTitulo());
+                    return;
+                }else{
+                    System.out.println("No hay copias disponibles");
+                    return;
+                }
+            }
+        }
+        System.out.println("Película no encontrada");
+    }
+    
 }
