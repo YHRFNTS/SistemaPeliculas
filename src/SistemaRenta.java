@@ -86,4 +86,14 @@ public class SistemaRenta {
             }
         }
     }
+
+    //Muestra películas actualmente rentadas
+    public void mostrarRentadas(){
+        System.out.println("\n=== Películas Rentadas ===");
+        for (Pelicula p : rentadas){
+            System.out.println(p.getCodigo() + " - " + p.getTitulo());
+        }
+    }
+
+    
 }
