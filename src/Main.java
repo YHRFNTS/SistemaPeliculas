@@ -29,6 +29,7 @@ public class Main {
             System.out.println("0. Salir");
             System.out.println("Ingrese su Opción: ");
             opcion = sc.nextInt();
+            sc.nextLine();
 
             //Procesar opción seleccionada
             switch (opcion){
@@ -37,10 +38,10 @@ public class Main {
                     codigo = sc.nextLine();
                     System.out.println("Título: ");
                     titulo = sc.nextLine();
-                    System.out.println("Duración (Min): ");
-                    duracion = sc.nextInt();
                     System.out.println("Género: ");
                     genero = sc.nextLine();
+                    System.out.println("Duración (Min): ");
+                    duracion = sc.nextInt();
                     System.out.println("Cantidad Disponible: ");
                     cantidad = sc.nextInt();
                     sistema.agregarPelicula(codigo, titulo, duracion, genero, cantidad);
