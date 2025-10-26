@@ -57,5 +57,25 @@ public class SistemaRenta {
         }
         System.out.println("Película no encontrada");
     }
+
+    //Devuelve una película rentada
+    public void devolverPelicula(String codigo){
+        for (Pelicula p : catalogo){
+            if (p.getCodigo().equals(codigo)){
+                p.setCantidadDisponible(p.getCantidadDisponible() + 1); //Incrementa disponibilidad
+                //Remueve de la lista de rentadas
+                for (int i = 0; i < rentadas.size(); i++){
+                    if (rentadas.get(i).getCodigo().equals(codigo)){
+                        rentadas.remove(i);
+                        break;
+                    }
+                }
+                System.out.println("Película devuelta: " + p.getTitulo());
+                return;
+            }
+        }
+        System.out.println("Película no encontrada");
+    }
+
     
 }
