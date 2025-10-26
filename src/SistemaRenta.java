@@ -77,5 +77,13 @@ public class SistemaRenta {
         System.out.println("Película no encontrada");
     }
 
-    
+    //Muestra películas con copias disponibles
+    public void mostrarDisponibles(){
+        System.out.println("\n=== Películas Disponibles ===");
+        for (Pelicula p : catalogo){
+            if (p.getCantidadDisponible() > 0){
+                System.out.println(p);
+            }
+        }
+    }
 }
