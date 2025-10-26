@@ -1,15 +1,35 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
+//Clase principal
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        SistemaRenta sistema = new SistemaRenta();
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        //Agregar películas de ejemplo
+        sistema.agregarPelicula("001", "La Guerra de los Mundos", 116, "Ciencia Ficción", 10);
+        sistema.agregarPelicula("002", "Gladiador", 155, "Acción", 8);
+        sistema.agregarPelicula("003", "Monsters University", 104, "Comedia", 5);
+
+        int opcion;
+        //Menú principal del sistema
+        do{
+            System.out.println("\n=== Sistema de Renta de Películas ===");
+            System.out.println("1. Agregar Película");
+            System.out.println("2. Eliminar Película");
+            System.out.println("3. Rentar Película");
+            System.out.println("4. Devolver Película");
+            System.out.println("5. Ver Disponibles");
+            System.out.println("6. Ver Rentadas");
+            System.out.println("7. Ver Más Rentadas");
+            System.out.println("8. Ver Menos Rentadas");
+            System.out.println("9. Ver por Género");
+            System.out.println("0. Salir");
+            System.out.println("Ingrese su Opción: ");
+
+            opcion = sc.nextInt();
+
+        } while (opcion != 0);
+        sc.close();
     }
 }
