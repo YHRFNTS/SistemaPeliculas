@@ -16,4 +16,16 @@ public class SistemaRenta {
         catalogo.add(new Pelicula(codigo, titulo, duracion, genero, cantidad));
         System.out.println("Película agregada: " + titulo);
     }
+
+    //Elimina una película del catálogo por código
+    public void eliminarPelicula(String codigo){
+        for (int i = 0; i < catalogo.size(); i++){
+            if (catalogo.get(i).getCodigo().equals(codigo)){
+                System.out.println("Película eliminada: " + catalogo.get(i).getTitulo());
+                catalogo.remove(i);
+                return;
+            }
+        }
+        System.out.println("Película no encontrada");
+    }
 }
