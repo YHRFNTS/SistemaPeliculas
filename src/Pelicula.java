@@ -9,7 +9,7 @@ public class Pelicula {
     private int vecesRentada;   //Contador de veces que se ha rentado
 
     //Constructor
-    public Pelicula(String codigo, String titulo, int duracion, String genero, int cantidadDisponible, int vecesRentada) {
+    public Pelicula(String codigo, String titulo, int duracion, String genero, int cantidadDisponible) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.duracion = duracion;
