@@ -95,5 +95,15 @@ public class SistemaRenta {
         }
     }
 
+    //Muestra películas que han sido rentadas al menos una vez
+    public void mostrarMasRentadas(){
+        System.out.println("\n=== Películas más rentadas ===");
+        for (Pelicula p : catalogo){
+            if (p.getVecesRentada() > 0){
+                System.out.println(p.getTitulo() + " - " + p.getVecesRentada() + " veces");
+            }
+        }
+    }
+
     
 }
