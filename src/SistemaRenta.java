@@ -115,5 +115,26 @@ public class SistemaRenta {
         }
     }
 
-    
+    //Agrupa y muestra películas por género
+    public void mostrarPorGenero(){
+        System.out.println("\n=== Películas por Género ===");
+        ArrayList<String> generos = new ArrayList<>();
+
+        //Obtiene lista de géneros únicos
+        for (Pelicula p : catalogo){
+            if (!generos.contains(p.getGenero())){
+                generos.add(p.getGenero());
+            }
+        }
+
+        //Muestra películas por cada género
+        for (String genero : generos){
+            System.out.println("\n" + genero + ":");
+            for (Pelicula p : catalogo){
+                if (p.getGenero().equals(genero)){
+                    System.out.println(" " + p.getTitulo());
+                }
+            }
+        }
+    }
 }
